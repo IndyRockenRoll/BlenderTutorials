@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Dev for Dummies</title>
+  <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+            }
+            html {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                justify-content: flex-start;
+                align-items: stretch;
+                font-size: 2rem;
+                height: 100%;
+                margin-left: 1rem;
+                width: 75vw;
+            }
+            header,
+            nav,
+            article,
+            aside,
+            footer {
+                border: 1px solid black;
+                background-color: lightgray; /* Change to any light color */
+                border-radius: 5px; /* Rounds the corners */
+                padding: 0.5rem;
+            }
+            main {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                justify-content: flex-start;
+                align-items: stretch;
+            }
+            article {
+                flex-grow: 1;
+            }
+            aside {
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: 10rem;
+            }
+            img {
+    display: block; /* Ensures the image appears below */
+    margin-top: 10px; /* Adds some spacing */
+            }
+ </style>
+</head>
+<body>
+        <header>
+            Welcome to homebase.
+        </header>    
+<nav>
+<a href="webcodingbook/bk02ch01/example15.html">Web Coding Course Book</a>
+<a href="dadstats/powerbi.html">TimeTrack Power BI Analytics</a>
+<a href="ATN2025/ATN2025.html">ATN2025</a>
+</nav>
+       <main>
+            <article>
+                Latest Blender Render - Random generated block towers: -
+                <img src="images/random_block_city.png" alt="blender render" height ="400" width="400">
+            </article>
+            <aside>
+              <a href="webdev.html">My Web Dev for dummy pages</a>        
+            </aside>
+        </main>
+        <footer>
+            LAST UPDATED: Feb 06 2025
+        </footer>    
+</body>
+
+</html>
