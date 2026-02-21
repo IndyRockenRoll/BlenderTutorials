@@ -1,0 +1,52 @@
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    public float jumpForce = 7f;  // Adjust the jump force as needed
+    public float moveSpeed = 5f;  // Movement speed
+    public Transform groundCheck; // Ground detection point
+    public LayerMask groundLayer; // Layer mask for ground
+
+    private Rigidbody2D rb;
+    private bool isGrounded;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        // Check if the player is grounded
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+
+        // Jump logic
+        if (isGrounded && Input.GetButtonDown("Jump"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        // Move logic (for example, simple left-right movement)
+        float move = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+    }
+}
+Key components:
+
+jumpForce: Determines how high the player jumps.
+
+groundCheck: A reference to a Transform placed at the player's feet to check for ground.
+
+groundLayer: A LayerMask to specify what counts as ground.
+
+isGrounded: Ensures that the player can only jump when they are on the ground.
+
+moveSpeed: Controls how fast the character moves left or right.
+
+To complete this:
+
+Create an empty GameObject at the character's feet and assign it to the groundCheck field.
+
+Set up your ground objects with the appropriate layer (e.g., "Ground") and assign that layer to groundLayer.
+
+This should provide a basic but effective character controller with jumping functionality!
